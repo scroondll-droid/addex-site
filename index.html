@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Addex Company</title>
+    <meta name="description" content="Design que diferencia. Identidade visual, web design e branding feitos com proximidade e comprometimento real.">
+
+    <!-- Open Graph / Discord -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://addexcompany.com/">
+    <meta property="og:title" content="Addex Company — Não seja só mais um.">
+    <meta property="og:description" content="Design que diferencia. Identidade visual, web design e branding feitos com proximidade e comprometimento real.">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Addex Company">
+
+    <!-- Twitter Card (também usado em alguns contextos) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Addex Company — Não seja só mais um.">
+    <meta name="twitter:description" content="Design que diferencia. Identidade visual, web design e branding feitos com proximidade e comprometimento real.">
+    <meta name="twitter:image" content="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6696 4236'><path fill-rule='evenodd' clip-rule='evenodd' d='M4572.66 3396.02V3396.01H4569.5L4571.29 3396.02L4572.66 3396.02Z' fill='%23036be8'/><path fill-rule='evenodd' clip-rule='evenodd' d='M4556.96 3396.01H4569.5C4565.32 3395.98 4561.14 3395.93 4556.96 3395.86L4556.96 3396.01Z' fill='%23036be8'/><path d='M4572.66 839.99C4741.03 839.331 4907.87 871.947 5063.61 935.97L5067.27 937.481C5222.12 1001.71 5362.84 1095.77 5481.4 1214.34C5600.89 1333.84 5695.49 1475.85 5759.74 1632.15C5823.98 1788.46 5856.59 1955.95 5855.67 2124.94C5854.75 2293.93 5820.33 2461.06 5754.4 2616.66C5688.46 2772.25 5592.32 2913.23 5471.54 3031.42C5350.76 3149.62 5207.74 3242.69 5050.75 3305.25C4898.63 3365.86 4736.32 3396.66 4572.66 3396.02L4571.29 3396.02L4569.5 3396.01H4556.96H4400.3H2244.66H2234.66V3395.51H1311.96C950.149 3395.51 724.02 3003.84 904.923 2690.51L1837.63 1075.01C1926.18 921.638 2079.74 843.342 2234.66 840.112V840.006H2244.66H3485.97H4572.66V839.99ZM4574.73 0.00203242L4572.66 0.00590155H2244.66C2243.51 0.00590107 2242.36 0.00738713 2241.21 0.0103597C1801.17 1.14658 1361.62 219.479 1110.17 655.006L177.461 2270.51L174.52 2275.62C-323.319 3146.39 303.025 4231.25 1306.05 4235.49L1311.96 4235.51H2244.66V4236.01L4572.66 4236C4673.95 4236.24 4774.92 4229.22 4874.81 4215.06C5041.29 4191.47 5204.76 4148.08 5361.69 4085.55C5621.85 3981.88 5858.87 3827.64 6059.04 3631.76C6259.2 3435.88 6418.52 3202.25 6527.8 2944.39C6637.07 2686.53 6694.11 2409.55 6695.63 2129.5C6697.15 1849.44 6643.11 1571.86 6536.65 1312.83C6430.18 1053.8 6273.4 818.451 6075.37 620.411C5877.35 422.371 5642.01 265.571 5382.99 159.084C5286.43 119.389 5187.3 86.979 5086.42 62.0155C5083.34 61.2539 5080.26 60.4992 5077.18 59.7514C4913.05 19.9179 4744.38 -0.232972 4574.73 0.00203242Z' fill='%23036be8'/></svg>" type="image/svg+xml">
     <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
     <style>
@@ -235,6 +252,21 @@
             color: #666;
         }
 
+        .header-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            align-items: center;
+        }
+
+        .behance-btn {
+            text-decoration: none;
+        }
+
+        body.dark-mode .behance-btn svg path {
+            fill: #2d2d2d;
+        }
+
         .theme-toggle {
             width: 50px;
             height: 50px;
@@ -326,13 +358,13 @@
         }
 
         main {
-            flex: 1;
+            height: 68vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 2rem;
             position: relative;
             z-index: 10;
         }
@@ -340,7 +372,7 @@
         h1 {
             font-size: 3.2rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -363,7 +395,7 @@
             color: #b0b0b0;
             max-width: 650px;
             line-height: 1.7;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.75rem;
             transition: color 0.5s ease;
         }
 
@@ -423,7 +455,7 @@
             font-size: 0.8rem;
             font-weight: 400;
             color: #888;
-            margin-top: 1rem;
+            margin-top: 1.25rem;
             transition: color 0.5s ease;
         }
 
@@ -431,9 +463,16 @@
             color: #888;
         }
 
+        .info-box-wrap {
+            width: 100%;
+            padding: 0 4rem 2.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
         .info-box {
             position: absolute;
-            bottom: 4rem;
+            bottom: 3rem;
             left: 4rem;
             max-width: 320px;
             display: flex;
@@ -494,6 +533,702 @@
 
         body.dark-mode .info-text {
             color: #666;
+        }
+
+        /* ── About Section ── */
+        .about-section {
+            position: relative;
+            z-index: 10;
+            padding: 6rem 4rem;
+        }
+
+        .about-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .about-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #555;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .about-label { color: #aaa; }
+
+        .about-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #666666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            transition: all 0.5s;
+        }
+
+        body.dark-mode .about-title {
+            background: linear-gradient(135deg, #1a1a1a 0%, #555 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-bio {
+            font-size: 0.88rem;
+            color: #999;
+            line-height: 1.75;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .about-bio { color: #666; }
+
+        .about-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #e8e8e8;
+            text-decoration: none;
+            margin-top: 0.5rem;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            width: fit-content;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            padding-bottom: 0.25rem;
+        }
+
+        body.dark-mode .about-cta { color: #1a1a1a; border-bottom-color: rgba(0,0,0,0.15); }
+
+        .about-cta:hover { gap: 0.85rem; border-bottom-color: rgba(255,255,255,0.5); }
+        body.dark-mode .about-cta:hover { border-bottom-color: rgba(0,0,0,0.4); }
+
+        .about-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        body.dark-mode .about-card {
+            background: rgba(0,0,0,0.03);
+            border-color: rgba(0,0,0,0.08);
+        }
+
+        .about-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.055);
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+
+        body.dark-mode .about-card:hover {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.15);
+        }
+
+        .about-card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s;
+        }
+
+        body.dark-mode .about-card-icon {
+            background: rgba(0,0,0,0.04);
+            border-color: rgba(0,0,0,0.08);
+        }
+
+        .about-card-icon svg path,
+        .about-card-icon svg circle {
+            transition: stroke 0.5s;
+            stroke: #e8e8e8;
+        }
+
+        body.dark-mode .about-card-icon svg path,
+        body.dark-mode .about-card-icon svg circle { stroke: #2d2d2d; }
+
+        .about-card-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #e8e8e8;
+            letter-spacing: -0.01em;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .about-card-title { color: #1a1a1a; }
+
+        .about-card-desc {
+            font-size: 0.75rem;
+            color: #777;
+            line-height: 1.65;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .about-card-desc { color: #888; }
+
+        @media (max-width: 768px) {
+            .about-section { padding: 4rem 1.5rem; }
+            .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .about-left { position: static; }
+            .about-title { font-size: 1.8rem; }
+        }
+
+        .section-divider {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-divider::after {
+            content: '';
+            display: block;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.08) 80%, transparent);
+        }
+
+        body.dark-mode .section-divider::after {
+            background: linear-gradient(to right, transparent, rgba(0,0,0,0.08) 20%, rgba(0,0,0,0.08) 80%, transparent);
+        }
+
+        /* ── Portfolio Section ── */
+        .portfolio-section {
+            position: relative;
+            z-index: 10;
+            padding: 6rem 4rem;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .portfolio-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 1rem;
+            transition: color 0.5s ease;
+        }
+
+        body.dark-mode .portfolio-label { color: #aaa; }
+
+        .portfolio-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #666666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            transition: all 0.5s ease;
+        }
+
+        body.dark-mode .portfolio-title {
+            background: linear-gradient(135deg, #1a1a1a 0%, #555555 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        body.dark-mode .portfolio-card {
+            background: rgba(0, 0, 0, 0.04);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        body.dark-mode .portfolio-card:hover {
+            border-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-image-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .portfolio-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block;
+        }
+
+        .portfolio-card:hover .portfolio-image-wrap img { transform: scale(1.06); }
+
+        .portfolio-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.07) 100%);
+        }
+
+        body.dark-mode .portfolio-image-placeholder {
+            background: linear-gradient(135deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.08) 100%);
+        }
+
+        .portfolio-image-placeholder svg { opacity: 0.15; transition: opacity 0.3s; }
+        .portfolio-card:hover .portfolio-image-placeholder svg { opacity: 0.3; }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+
+        .portfolio-overlay-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0.7);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .portfolio-card:hover .portfolio-overlay-icon { transform: scale(1); }
+
+        .portfolio-info { padding: 1.25rem 1.5rem 1.5rem; }
+
+        .portfolio-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 0.5rem;
+            transition: color 0.5s ease;
+        }
+
+        body.dark-mode .portfolio-tag { color: #999; }
+
+        .portfolio-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e8e8e8;
+            margin-bottom: 0.5rem;
+            transition: color 0.5s ease;
+            letter-spacing: -0.01em;
+        }
+
+        body.dark-mode .portfolio-name { color: #2d2d2d; }
+
+        .portfolio-desc {
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.6;
+            transition: color 0.5s ease;
+        }
+
+        body.dark-mode .portfolio-desc { color: #777; }
+
+        /* ── Lightbox ── */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(16px);
+        }
+
+        body.dark-mode .lightbox-backdrop { background: rgba(180, 180, 180, 0.6); }
+
+        .lightbox-content {
+            position: relative;
+            z-index: 1;
+            max-width: 860px;
+            width: calc(100% - 3rem);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.34, 1.3, 0.64, 1);
+        }
+
+        body.dark-mode .lightbox-content {
+            background: rgba(255, 255, 255, 0.75);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .lightbox.active .lightbox-content { transform: scale(1) translateY(0); }
+
+        .lightbox-image-wrap {
+            width: 100%;
+            max-height: 70vh;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-image-wrap img { width: 100%; height: 100%; max-height: 70vh; object-fit: contain; display: block; }
+
+        /* Gallery nav */
+        .lb-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lb-nav:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lb-prev { left: 0.75rem; }
+        .lb-next { right: 0.75rem; }
+
+        .lb-nav.hidden { opacity: 0; pointer-events: none; }
+
+        /* Thumbnails */
+        .lb-thumbnails {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .lb-thumbnails::-webkit-scrollbar { display: none; }
+
+        .lb-thumbnails.hidden { display: none; }
+
+        .lb-thumb {
+            flex-shrink: 0;
+            width: 60px;
+            height: 42px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            opacity: 0.5;
+        }
+
+        .lb-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .lb-thumb:hover { opacity: 0.8; }
+        .lb-thumb.active { border-color: rgba(255,255,255,0.5); opacity: 1; }
+
+        .lightbox-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.07) 100%);
+        }
+
+        .lightbox-body { padding: 2rem 2.5rem 2.5rem; }
+
+        .lightbox-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 0.6rem;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .lightbox-tag { color: #888; }
+
+        .lightbox-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e8e8e8;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .lightbox-title { color: #1a1a1a; }
+
+        .lightbox-desc {
+            font-size: 0.85rem;
+            color: #999;
+            line-height: 1.7;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .lightbox-desc { color: #666; }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        body.dark-mode .lightbox-close {
+            background: rgba(0,0,0,0.06);
+            border-color: rgba(0,0,0,0.12);
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.1) rotate(90deg);
+        }
+
+        .lightbox-close svg path { transition: stroke 0.5s; stroke: #e8e8e8; }
+        body.dark-mode .lightbox-close svg path { stroke: #2d2d2d; }
+
+        @media (max-width: 768px) {
+            .portfolio-section { padding: 4rem 1.5rem; }
+            .portfolio-title { font-size: 1.8rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .lightbox-body { padding: 1.5rem; }
+            .lightbox-title { font-size: 1.2rem; }
+            .portfolio-cta-inner { flex-direction: column; text-align: center; gap: 2rem; }
+            .portfolio-cta-text { align-items: center; }
+        }
+
+        /* ── Portfolio CTA ── */
+        .portfolio-cta {
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            padding: 2.5rem 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 80% 50%, rgba(100, 150, 255, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        body.dark-mode .portfolio-cta {
+            background: rgba(0, 0, 0, 0.04);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-cta-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .portfolio-cta-eyebrow {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #555;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .portfolio-cta-eyebrow { color: #999; }
+
+        .portfolio-cta-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e8e8e8;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .portfolio-cta-title { color: #1a1a1a; }
+
+        .portfolio-cta-sub {
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.6;
+            max-width: 480px;
+            margin-top: 0.2rem;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .portfolio-cta-sub { color: #666; }
+
+        .portfolio-cta-btn {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            color: #0a0a0a;
+            padding: 0.9rem 2rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.dark-mode .portfolio-cta-btn {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: #ffffff;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: left 0.5s;
+        }
+
+        .portfolio-cta-btn:hover::before { left: 100%; }
+
+        .portfolio-cta-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 14px 40px rgba(255, 255, 255, 0.18);
+        }
+
+        .portfolio-cta-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-cta-btn:hover svg {
+            transform: translateX(4px);
         }
 
         .logos-section {
@@ -613,9 +1348,11 @@
                 padding: 2rem 1.5rem;
             }
 
+            .info-box-wrap {
+                padding: 0 1.5rem 2rem;
+            }
+
             .info-box {
-                position: static;
-                margin: 2rem auto 0;
                 max-width: 90%;
             }
 
@@ -654,10 +1391,19 @@
 <div class="logo-subtitle">Company</div>
 </div>
 </div>
+<div class="header-actions">
 <div class="theme-toggle" onclick="toggleDarkMode()">
 <svg class="star-icon" width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16 0L19.6091 12.3909L32 16L19.6091 19.6091L16 32L12.3909 19.6091L0 16L12.3909 12.3909L16 0Z" fill="#e8e8e8"/>
 </svg>
+</div>
+<a href="https://www.behance.net/" target="_blank" class="theme-toggle behance-btn" aria-label="Behance">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.5 11.5C8.88 11.5 10 10.38 10 9C10 7.62 8.88 6.5 7.5 6.5H2V17.5H7.5C9.16 17.5 10.5 16.16 10.5 14.5C10.5 13.17 9.66 12.04 8.5 11.63C8.17 11.55 7.84 11.5 7.5 11.5ZM4 8.5H7C7.83 8.5 8.5 9.17 8.5 10C8.5 10.83 7.83 11.5 7 11.5H4V8.5ZM7.5 15.5H4V13H7.5C8.33 13 9 13.67 9 14.5C9 15.33 8.33 16 7.5 16V15.5Z" fill="#e8e8e8"/>
+  <path d="M16.5 8C14.01 8 12 10.01 12 12.5C12 14.99 14.01 17 16.5 17C18.28 17 19.83 15.97 20.6 14.5H18.76C18.24 15.12 17.42 15.5 16.5 15.5C15.17 15.5 14.04 14.62 13.62 13.5H21C21.04 13.17 21 12.84 21 12.5C21 10.01 18.99 8 16.5 8ZM13.62 12C14.04 10.88 15.17 10 16.5 10C17.83 10 18.96 10.88 19.38 12H13.62Z" fill="#e8e8e8"/>
+  <path d="M14.5 7H18.5V6H14.5V7Z" fill="#e8e8e8"/>
+</svg>
+</a>
 </div>
 </header>
 <main>
@@ -678,6 +1424,7 @@
     </div>
 </main>
 
+<!-- ── Portfolio ── -->
 <section class="logos-section fade-in">
     <div class="logos-container">
         <div class="logos-track">
@@ -701,6 +1448,240 @@
     </div>
 </section>
 
+<!-- ── About ── -->
+<section class="about-section fade-in-up">
+    <div class="about-inner">
+
+        <div class="about-left">
+            <p class="about-label">Quem está por trás</p>
+            <h2 class="about-title">Feito por quem<br>entende do negócio.</h2>
+            <p class="about-bio">
+                Sou designer e criativo à frente da Addex Company. Comecei porque via projetos sendo entregues sem alma — sem identidade, sem estratégia, sem cuidado. Decidi mudar isso. Cada cliente que chega aqui recebe atenção real, não um template genérico.
+            </p>
+            <p class="about-bio">
+                Com anos de experiência em branding, web design e identidade visual, trago clareza onde havia confusão e consistência onde havia improviso.
+            </p>
+            <a href="https://discord.gg/6nnytx22sf" target="_blank" class="about-cta">
+                Fala comigo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="about-right">
+            <div class="about-card">
+                <div class="about-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#e8e8e8" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h4 class="about-card-title">Identidade única</h4>
+                <p class="about-card-desc">Nenhum projeto sai igual ao outro. Cada entrega é pensada do zero, para o seu público e a sua realidade.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="#e8e8e8" stroke-width="1.5"/>
+                        <path d="M12 6v6l4 2" stroke="#e8e8e8" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h4 class="about-card-title">Entrega com prazo</h4>
+                <p class="about-card-desc">Comprometimento real com datas. Sem enrolação, sem sumiço. Você sabe exatamente o que esperar e quando.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#e8e8e8" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="9" cy="7" r="4" stroke="#e8e8e8" stroke-width="1.5"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#e8e8e8" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h4 class="about-card-title">Parceria duradoura</h4>
+                <p class="about-card-desc">A maioria dos clientes volta. Porque o relacionamento não termina na entrega — ele começa ali.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#e8e8e8" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h4 class="about-card-title">Qualidade garantida</h4>
+                <p class="about-card-desc">Revisões incluídas, feedback levado a sério e resultado que você se orgulha de mostrar.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="portfolio-section fade-in-up">
+    <div class="portfolio-header">
+        <p class="portfolio-label">Nossos projetos</p>
+        <h2 class="portfolio-title">Trabalhos que falam por si.</h2>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid">
+
+        <div class="portfolio-card" onclick="openLightbox(0)">
+            <div class="portfolio-image-wrap">
+                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Rise Roleplay">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-overlay-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-9 9M3 21l9-9" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-info">
+                <p class="portfolio-tag">Identidade Visual</p>
+                <p class="portfolio-name">Rise Roleplay</p>
+                <p class="portfolio-desc">Branding completo com logotipo, paleta de cores e sistema visual para servidor de roleplay.</p>
+            </div>
+        </div>
+
+        <div class="portfolio-card" onclick="openLightbox(1)">
+            <div class="portfolio-image-wrap">
+                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Projeto">
+<div class="portfolio-overlay">
+                    <div class="portfolio-overlay-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-9 9M3 21l9-9" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-info">
+                <p class="portfolio-tag">Web Design</p>
+                <p class="portfolio-name">HylexPay</p>
+                <p class="portfolio-desc">Landing page moderna e responsiva com foco em conversão e clareza da proposta de valor.</p>
+            </div>
+        </div>
+
+        <div class="portfolio-card" onclick="openLightbox(2)">
+            <div class="portfolio-image-wrap">
+                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Projeto">
+<div class="portfolio-overlay">
+                    <div class="portfolio-overlay-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-9 9M3 21l9-9" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-info">
+                <p class="portfolio-tag">Social Media</p>
+                <p class="portfolio-name">Nectar</p>
+                <p class="portfolio-desc">Pacote de artes para redes sociais com consistência visual e linguagem direcionada ao público.</p>
+            </div>
+        </div>
+
+        <div class="portfolio-card" onclick="openLightbox(3)">
+            <div class="portfolio-image-wrap">
+                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Projeto">
+<div class="portfolio-overlay">
+                    <div class="portfolio-overlay-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-9 9M3 21l9-9" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-info">
+                <p class="portfolio-tag">Branding</p>
+                <p class="portfolio-name">Remap Customz</p>
+                <p class="portfolio-desc">Identidade visual robusta para empresa de personalização automotiva com aplicações em múltiplos formatos.</p>
+            </div>
+        </div>
+
+        <div class="portfolio-card" onclick="openLightbox(4)">
+            <div class="portfolio-image-wrap">
+                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Projeto">
+<div class="portfolio-overlay">
+                    <div class="portfolio-overlay-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-9 9M3 21l9-9" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-info">
+                <p class="portfolio-tag">UI / UX</p>
+                <p class="portfolio-name">Core System</p>
+                <p class="portfolio-desc">Interface de painel administrativo com foco em usabilidade, hierarquia visual clara e fluxo intuitivo.</p>
+            </div>
+        </div>
+
+        <div class="portfolio-card" onclick="openLightbox(5)">
+            <div class="portfolio-image-wrap">
+                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Projeto">
+<div class="portfolio-overlay">
+                    <div class="portfolio-overlay-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-9 9M3 21l9-9" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-info">
+                <p class="portfolio-tag">Identidade Visual</p>
+                <p class="portfolio-name">Vanish Roleplay</p>
+                <p class="portfolio-desc">Conceito visual sombrio e imersivo para servidor de roleplay com tipografia personalizada.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="portfolio-cta">
+        <div class="portfolio-cta-inner">
+            <div class="portfolio-cta-text">
+                <p class="portfolio-cta-eyebrow">Tem mais por aí</p>
+                <h3 class="portfolio-cta-title">Quer ver o portfólio completo?</h3>
+                <p class="portfolio-cta-sub">Cada projeto conta uma história diferente. Acesse nosso servidor e veja tudo que já entregamos.</p>
+            </div>
+            <a href="https://discord.gg/6nnytx22sf" target="_blank" class="portfolio-cta-btn">
+                <span>Veja mais</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ── Lightbox ── -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBackdrop(event)">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+        <div class="lightbox-close" onclick="closeLightbox()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="lightbox-image-wrap" id="lightboxImageWrap">
+            <button class="lb-nav lb-prev" id="lbPrev" onclick="lbNavigate(-1)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <img id="lightboxMainImg" src="" alt="">
+            <button class="lb-nav lb-next" id="lbNext" onclick="lbNavigate(1)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18l6-6-6-6" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="lb-thumbnails" id="lbThumbnails"></div>
+        <div class="lightbox-body">
+            <p class="lightbox-tag" id="lightboxTag"></p>
+            <h3 class="lightbox-title" id="lightboxTitle"></h3>
+            <p class="lightbox-desc" id="lightboxDesc"></p>
+        </div>
+    </div>
+</div>
+
+
 <footer class="fade-in">
     <p>© 2019 - 2025 Addex Company. Todos os direitos reservados.</p>
     <div class="footer-links">
@@ -714,7 +1695,125 @@
         document.body.classList.toggle('dark-mode');
     }
 
-    // Custom cursor
+    // ── Portfolio Lightbox ──
+    const IMG = 'https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&';
+
+    const portfolioData = [
+        {
+            tag: 'Identidade Visual',
+            title: 'Rise Roleplay',
+            desc: 'Branding completo com logotipo, paleta de cores e sistema visual para servidor de roleplay. O projeto envolveu pesquisa de referências, desenvolvimento de conceito e entrega de todos os arquivos de aplicação.',
+            imgs: [IMG, IMG, IMG] // substitua pelos URLs reais das imagens
+        },
+        {
+            tag: 'Web Design',
+            title: 'HylexPay',
+            desc: 'Landing page moderna e responsiva com foco em conversão e clareza da proposta de valor. Layout construído com atenção à hierarquia visual e experiência do usuário.',
+            imgs: [IMG, IMG]
+        },
+        {
+            tag: 'Social Media',
+            title: 'Nectar',
+            desc: 'Pacote de artes para redes sociais com consistência visual e linguagem direcionada ao público-alvo. Feed planejado com paleta coesa e templates reutilizáveis.',
+            imgs: [IMG, IMG, IMG]
+        },
+        {
+            tag: 'Branding',
+            title: 'Remap Customz',
+            desc: 'Identidade visual robusta para empresa de personalização automotiva com aplicações em múltiplos formatos — digital, impressão e uniformes.',
+            imgs: [IMG, IMG]
+        },
+        {
+            tag: 'UI / UX',
+            title: 'Core System',
+            desc: 'Interface de painel administrativo com foco em usabilidade, hierarquia visual clara e fluxo intuitivo. Projeto inclui protótipo navegável e guia de componentes.',
+            imgs: [IMG, IMG, IMG]
+        },
+        {
+            tag: 'Identidade Visual',
+            title: 'Vanish Roleplay',
+            desc: 'Conceito visual sombrio e imersivo para servidor de roleplay com tipografia personalizada, paleta monocromática e elementos gráficos exclusivos.',
+            imgs: [IMG, IMG]
+        }
+    ];
+
+    let currentImgIndex = 0;
+    let currentImgs = [];
+
+    function openLightbox(index) {
+        const data = portfolioData[index];
+        currentImgs = data.imgs || [];
+        currentImgIndex = 0;
+
+        document.getElementById('lightboxTag').textContent = data.tag;
+        document.getElementById('lightboxTitle').textContent = data.title;
+        document.getElementById('lightboxDesc').textContent = data.desc;
+
+        renderLightboxImage();
+        renderThumbnails();
+
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function renderLightboxImage() {
+        const img = document.getElementById('lightboxMainImg');
+        img.src = currentImgs[currentImgIndex] || '';
+        img.alt = `Imagem ${currentImgIndex + 1}`;
+
+        document.getElementById('lbPrev').classList.toggle('hidden', currentImgIndex === 0);
+        document.getElementById('lbNext').classList.toggle('hidden', currentImgIndex === currentImgs.length - 1);
+
+        document.querySelectorAll('.lb-thumb').forEach((t, i) => {
+            t.classList.toggle('active', i === currentImgIndex);
+        });
+    }
+
+    function renderThumbnails() {
+        const container = document.getElementById('lbThumbnails');
+        container.innerHTML = '';
+
+        if (currentImgs.length <= 1) {
+            container.classList.add('hidden');
+            return;
+        }
+
+        container.classList.remove('hidden');
+        currentImgs.forEach((src, i) => {
+            const thumb = document.createElement('div');
+            thumb.className = 'lb-thumb' + (i === 0 ? ' active' : '');
+            thumb.innerHTML = `<img src="${src}" alt="Thumb ${i+1}">`;
+            thumb.onclick = () => { currentImgIndex = i; renderLightboxImage(); };
+            container.appendChild(thumb);
+        });
+    }
+
+    function lbNavigate(dir) {
+        const next = currentImgIndex + dir;
+        if (next >= 0 && next < currentImgs.length) {
+            currentImgIndex = next;
+            renderLightboxImage();
+        }
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function closeLightboxOnBackdrop(e) {
+        if (e.target === document.getElementById('lightbox') ||
+            e.target.classList.contains('lightbox-backdrop')) {
+            closeLightbox();
+        }
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') lbNavigate(-1);
+        if (e.key === 'ArrowRight') lbNavigate(1);
+    });
+
     const cursor = document.querySelector('.cursor');
     
     document.addEventListener('mousemove', (e) => {
