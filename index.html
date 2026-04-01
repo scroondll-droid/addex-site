@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Addex Company</title>
-    <meta name="description" content="Não seja só mais um. Já parou pra pensar que muitos dos seus concorrentes parecem iguais? Mesma linguagem, mesmo visual, mesma promessa. Talvez seja hora de mudar isso.">
+    <meta name="description" content="Design que diferencia. Identidade visual, web design e branding feitos com proximidade e comprometimento real.">
 
     <!-- Open Graph / Discord -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://addexcompany.com/">
-    <meta property="og:title" content="Addex Company - Design">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="https://github.com/scroondll-droid/imagens/blob/main/2026.png">
+    <meta property="og:title" content="Addex Company — Não seja só mais um.">
+    <meta property="og:description" content="Design que diferencia. Identidade visual, web design e branding feitos com proximidade e comprometimento real.">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Addex Company">
@@ -1281,37 +1281,135 @@
         }
 
         footer {
-            padding: 2rem 4rem;
             position: relative;
             z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: #888;
-            transition: color 0.5s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            transition: all 0.5s ease;
         }
 
         body.dark-mode footer {
-            color: #888;
+            background: rgba(0, 0, 0, 0.03);
+            border-top-color: rgba(0, 0, 0, 0.08);
         }
 
-        .footer-links {
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 4rem 3rem;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        /* Brand */
+        .footer-brand { display: flex; flex-direction: column; gap: 1.25rem; }
+
+        .footer-logo {
             display: flex;
-            gap: 2rem;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .footer-link {
+        .footer-logo svg path { fill: #e8e8e8; transition: fill 0.5s; }
+        body.dark-mode .footer-logo svg path { fill: #2d2d2d; }
+
+        .footer-logo-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #e8e8e8;
+            transition: color 0.5s;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-logo-name span { color: #666; font-weight: 400; }
+        body.dark-mode .footer-logo-name { color: #1a1a1a; }
+        body.dark-mode .footer-logo-name span { color: #999; }
+
+        .footer-tagline {
+            font-size: 0.78rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 260px;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .footer-tagline { color: #888; }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.25rem;
+        }
+
+        .footer-social {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #888;
             text-decoration: none;
             transition: all 0.3s ease;
+        }
+
+        body.dark-mode .footer-social {
+            background: rgba(0,0,0,0.04);
+            border-color: rgba(0,0,0,0.08);
+        }
+
+        .footer-social:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #e8e8e8;
+            transform: translateY(-2px);
+        }
+
+        body.dark-mode .footer-social:hover {
+            background: rgba(0,0,0,0.08);
+            color: #1a1a1a;
+        }
+
+        /* Cols */
+        .footer-cols {
+            display: contents;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-col-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 0.25rem;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .footer-col-title { color: #aaa; }
+
+        .footer-col-link {
+            font-size: 0.82rem;
+            color: #777;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            width: fit-content;
             position: relative;
         }
 
-        .footer-link::after {
+        .footer-col-link::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -2px;
             left: 0;
             width: 0;
             height: 1px;
@@ -1319,20 +1417,50 @@
             transition: width 0.3s ease;
         }
 
-        body.dark-mode .footer-link::after {
-            background: #2d2d2d;
+        body.dark-mode .footer-col-link::after { background: #2d2d2d; }
+
+        .footer-col-link:hover { color: #e8e8e8; }
+        body.dark-mode .footer-col-link:hover { color: #1a1a1a; }
+        .footer-col-link:hover::after { width: 100%; }
+
+        /* Bottom bar */
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: border-color 0.5s;
         }
 
-        .footer-link:hover {
-            color: #e8e8e8;
+        body.dark-mode .footer-bottom { border-top-color: rgba(0,0,0,0.06); }
+
+        .footer-copy, .footer-made {
+            font-size: 0.7rem;
+            color: #555;
+            transition: color 0.5s;
         }
 
-        body.dark-mode .footer-link:hover {
-            color: #2d2d2d;
-        }
+        body.dark-mode .footer-copy,
+        body.dark-mode .footer-made { color: #999; }
 
-        .footer-link:hover::after {
-            width: 100%;
+        .footer-made { font-style: italic; }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+                padding: 3rem 1.5rem 2rem;
+                gap: 2.5rem;
+            }
+            .footer-brand { grid-column: 1 / -1; }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.25rem 1.5rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1344,7 +1472,7 @@
                 font-size: 0.95rem;
             }
 
-            header, footer {
+            header {
                 padding: 2rem 1.5rem;
             }
 
@@ -1525,7 +1653,7 @@
 
         <div class="portfolio-card" onclick="openLightbox(0)">
             <div class="portfolio-image-wrap">
-                <img src="https://github.com/scroondll-droid/imagens/blob/main/ztksite.png?raw=true" alt="Rise Roleplay">
+                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Rise Roleplay">
                 <div class="portfolio-overlay">
                     <div class="portfolio-overlay-icon">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -1535,15 +1663,15 @@
                 </div>
             </div>
             <div class="portfolio-info">
-                <p class="portfolio-tag">2026</p>
+                <p class="portfolio-tag">2026/p>
                 <p class="portfolio-name">ZTK - Zone To Kill</p>
-                <p class="portfolio-desc">FiveM PvP Server</p>
+                <p class="portfolio-desc">FiveM PvP Server.</p>
             </div>
         </div>
 
         <div class="portfolio-card" onclick="openLightbox(1)">
             <div class="portfolio-image-wrap">
-                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Projeto">
+                <img src="https://github.com/scroondll-droid/imagens/blob/main/ztkbasesite.png?raw=true" alt="Projeto">
 <div class="portfolio-overlay">
                     <div class="portfolio-overlay-icon">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -1553,15 +1681,15 @@
                 </div>
             </div>
             <div class="portfolio-info">
-                <p class="portfolio-tag">Web Design</p>
-                <p class="portfolio-name">HylexPay</p>
-                <p class="portfolio-desc">Landing page moderna e responsiva com foco em conversão e clareza da proposta de valor.</p>
+                <p class="portfolio-tag">2026</p>
+                <p class="portfolio-name">VESH - Academy</p>
+                <p class="portfolio-desc">FiveM Academy Server.</p>
             </div>
         </div>
 
         <div class="portfolio-card" onclick="openLightbox(2)">
             <div class="portfolio-image-wrap">
-                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Projeto">
+                <img src="https://github.com/scroondll-droid/imagens/blob/main/veshbasesite.png?raw=true" alt="Projeto">
 <div class="portfolio-overlay">
                     <div class="portfolio-overlay-icon">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -1571,15 +1699,15 @@
                 </div>
             </div>
             <div class="portfolio-info">
-                <p class="portfolio-tag">Social Media</p>
-                <p class="portfolio-name">Nectar</p>
-                <p class="portfolio-desc">Pacote de artes para redes sociais com consistência visual e linguagem direcionada ao público.</p>
+                <p class="portfolio-tag">2025 - 2026</p>
+                <p class="portfolio-name">HOST</p>
+                <p class="portfolio-desc">Host Group. Host Roleplay and Host Agency</p>
             </div>
         </div>
 
         <div class="portfolio-card" onclick="openLightbox(3)">
             <div class="portfolio-image-wrap">
-                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Projeto">
+                <img src="https://github.com/scroondll-droid/imagens/blob/main/hostbasesite.png?raw=true" alt="Projeto">
 <div class="portfolio-overlay">
                     <div class="portfolio-overlay-icon">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -1589,15 +1717,15 @@
                 </div>
             </div>
             <div class="portfolio-info">
-                <p class="portfolio-tag">Branding</p>
-                <p class="portfolio-name">Remap Customz</p>
-                <p class="portfolio-desc">Identidade visual robusta para empresa de personalização automotiva com aplicações em múltiplos formatos.</p>
+                <p class="portfolio-tag">2025 - 2026</p>
+                <p class="portfolio-name">FTW - For The Win</p>
+                <p class="portfolio-desc">FiveM Cars.</p>
             </div>
         </div>
 
         <div class="portfolio-card" onclick="openLightbox(4)">
             <div class="portfolio-image-wrap">
-                <img src="https://cdn.discordapp.com/attachments/1076956834327433237/1473366396741095506/Flyer_VESH_2026.png?ex=69a9b962&is=69a867e2&hm=cd34dd42313940a63b5fa870ac35562d56dc4ac19fe49c17cc89489226887f95&" alt="Projeto">
+                <img src="https://github.com/scroondll-droid/imagens/blob/main/ftwbasesite.png?raw=true" alt="Projeto">
 <div class="portfolio-overlay">
                     <div class="portfolio-overlay-icon">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -1683,10 +1811,71 @@
 
 
 <footer class="fade-in">
-    <p>© 2019 - 2025 Addex Company. Todos os direitos reservados.</p>
-    <div class="footer-links">
-        <a href="#" class="footer-link">Política de Privacidade</a>
-        <a href="https://www.addexcompany.com/termos" class="footer-link">Termos</a>
+    <div class="footer-inner">
+
+        <!-- Brand col -->
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <svg height="28" viewBox="0 0 6696 4236" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4572.66 3396.02V3396.01H4569.5L4571.29 3396.02L4572.66 3396.02Z" fill="#e8e8e8"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4556.96 3396.01H4569.5C4565.32 3395.98 4561.14 3395.93 4556.96 3395.86L4556.96 3396.01Z" fill="#e8e8e8"/>
+                    <path d="M4572.66 839.99C4741.03 839.331 4907.87 871.947 5063.61 935.97L5067.27 937.481C5222.12 1001.71 5362.84 1095.77 5481.4 1214.34C5600.89 1333.84 5695.49 1475.85 5759.74 1632.15C5823.98 1788.46 5856.59 1955.95 5855.67 2124.94C5854.75 2293.93 5820.33 2461.06 5754.4 2616.66C5688.46 2772.25 5592.32 2913.23 5471.54 3031.42C5350.76 3149.62 5207.74 3242.69 5050.75 3305.25C4898.63 3365.86 4736.32 3396.66 4572.66 3396.02L4571.29 3396.02L4569.5 3396.01H4556.96H4400.3H2244.66H2234.66V3395.51H1311.96C950.149 3395.51 724.02 3003.84 904.923 2690.51L1837.63 1075.01C1926.18 921.638 2079.74 843.342 2234.66 840.112V840.006H2244.66H3485.97H4572.66V839.99ZM4574.73 0.00203242L4572.66 0.00590155H2244.66C2243.51 0.00590107 2242.36 0.00738713 2241.21 0.0103597C1801.17 1.14658 1361.62 219.479 1110.17 655.006L177.461 2270.51L174.52 2275.62C-323.319 3146.39 303.025 4231.25 1306.05 4235.49L1311.96 4235.51H2244.66V4236.01L4572.66 4236C4673.95 4236.24 4774.92 4229.22 4874.81 4215.06C5041.29 4191.47 5204.76 4148.08 5361.69 4085.55C5621.85 3981.88 5858.87 3827.64 6059.04 3631.76C6259.2 3435.88 6418.52 3202.25 6527.8 2944.39C6637.07 2686.53 6694.11 2409.55 6695.63 2129.5C6697.15 1849.44 6643.11 1571.86 6536.65 1312.83C6430.18 1053.8 6273.4 818.451 6075.37 620.411C5877.35 422.371 5642.01 265.571 5382.99 159.084C5286.43 119.389 5187.3 86.979 5086.42 62.0155C5083.34 61.2539 5080.26 60.4992 5077.18 59.7514C4913.05 19.9179 4744.38 -0.232972 4574.73 0.00203242Z" fill="#e8e8e8"/>
+                </svg>
+                <span class="footer-logo-name">Addex <span>Company</span></span>
+            </div>
+            <p class="footer-tagline">Design que diferencia. Cada projeto tratado com proximidade, comprometimento e identidade única.</p>
+            <div class="footer-socials">
+                <a href="https://discord.gg/6nnytx22sf" target="_blank" class="footer-social" aria-label="Discord">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://www.behance.net/" target="_blank" class="footer-social" aria-label="Behance">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M7.5 11.5C8.88 11.5 10 10.38 10 9C10 7.62 8.88 6.5 7.5 6.5H2V17.5H7.5C9.16 17.5 10.5 16.16 10.5 14.5C10.5 13.17 9.66 12.04 8.5 11.63C8.17 11.55 7.84 11.5 7.5 11.5ZM4 8.5H7C7.83 8.5 8.5 9.17 8.5 10C8.5 10.83 7.83 11.5 7 11.5H4V8.5ZM7.5 15.5H4V13H7.5C8.33 13 9 13.67 9 14.5C9 15.33 8.33 16 7.5 16V15.5Z" fill="currentColor"/>
+                        <path d="M16.5 8C14.01 8 12 10.01 12 12.5C12 14.99 14.01 17 16.5 17C18.28 17 19.83 15.97 20.6 14.5H18.76C18.24 15.12 17.42 15.5 16.5 15.5C15.17 15.5 14.04 14.62 13.62 13.5H21C21.04 13.17 21 12.84 21 12.5C21 10.01 18.99 8 16.5 8ZM13.62 12C14.04 10.88 15.17 10 16.5 10C17.83 10 18.96 10.88 19.38 12H13.62Z" fill="currentColor"/>
+                        <path d="M14.5 7H18.5V6H14.5V7Z" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/" target="_blank" class="footer-social" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/>
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Links cols -->
+        <div class="footer-cols">
+            <div class="footer-col">
+                <p class="footer-col-title">Navegação</p>
+                <a href="#" class="footer-col-link">Início</a>
+                <a href="#" class="footer-col-link">Sobre</a>
+                <a href="#" class="footer-col-link">Portfólio</a>
+                <a href="https://discord.gg/6nnytx22sf" target="_blank" class="footer-col-link">Contato</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">Serviços</p>
+                <a href="#" class="footer-col-link">Identidade Visual</a>
+                <a href="#" class="footer-col-link">Web Design</a>
+                <a href="#" class="footer-col-link">Social Media</a>
+                <a href="#" class="footer-col-link">Branding</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">Legal</p>
+                <a href="#" class="footer-col-link">Política de Privacidade</a>
+                <a href="#" class="footer-col-link">Termos de Uso</a>
+                <a href="#" class="footer-col-link">Cookies</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p class="footer-copy">© 2019 – 2026 Addex Company. Todos os direitos reservados.</p>
+        <p class="footer-made">Feito com cuidado, entregue com propósito.</p>
     </div>
 </footer>
 
