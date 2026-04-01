@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos e Condições — Addex Creations</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6696 4236'><path d='M4572.66 839.99C4741.03 839.331 4907.87 871.947 5063.61 935.97L5067.27 937.481C5222.12 1001.71 5362.84 1095.77 5481.4 1214.34C5600.89 1333.84 5695.49 1475.85 5759.74 1632.15C5823.98 1788.46 5856.59 1955.95 5855.67 2124.94C5854.75 2293.93 5820.33 2461.06 5754.4 2616.66C5688.46 2772.25 5592.32 2913.23 5471.54 3031.42C5350.76 3149.62 5207.74 3242.69 5050.75 3305.25C4898.63 3365.86 4736.32 3396.66 4572.66 3396.02H2244.66H1311.96C950.149 3395.51 724.02 3003.84 904.923 2690.51L1837.63 1075.01C1926.18 921.638 2079.74 843.342 2234.66 840.112V840.006H4572.66V839.99ZM4574.73 0H2244.66C1801.17 1.147 1361.62 219.479 1110.17 655.006L177.461 2270.51C-323.319 3146.39 303.025 4231.25 1306.05 4235.49H4572.66C4673.95 4236.24 4774.92 4229.22 4874.81 4215.06C5041.29 4191.47 5204.76 4148.08 5361.69 4085.55C5621.85 3981.88 5858.87 3827.64 6059.04 3631.76C6259.2 3435.88 6418.52 3202.25 6527.8 2944.39C6637.07 2686.53 6694.11 2409.55 6695.63 2129.5C6697.15 1849.44 6643.11 1571.86 6536.65 1312.83C6430.18 1053.8 6273.4 818.451 6075.37 620.411C5877.35 422.371 5642.01 265.571 5382.99 159.084C5123.97 52.597 4850.38 -0.233 4574.73 0Z' fill='%23036be8'/></svg>" type="image/svg+xml">
+    <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #000000;
+            --bg2: #0a0a0a;
+            --text: #e8e8e8;
+            --muted: #888;
+            --dim: #555;
+            --border: rgba(255,255,255,0.08);
+            --border-hover: rgba(255,255,255,0.16);
+            --glass: rgba(255,255,255,0.03);
+            --glass-hover: rgba(255,255,255,0.055);
+        }
+
+        body {
+            font-family: 'Nexa', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Background effects */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+            animation: float 20s ease-in-out infinite;
+        }
+        .orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(100,150,255,0.3) 0%, transparent 70%); top: -10%; right: -5%; }
+        .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(150,100,255,0.25) 0%, transparent 70%); bottom: 10%; left: -5%; animation-delay: 10s; }
+
+        @keyframes float {
+            0%,100% { transform: translate(0,0) scale(1); }
+            33% { transform: translate(20px,-20px) scale(1.05); }
+            66% { transform: translate(-15px,15px) scale(0.95); }
+        }
+
+        .grid-bg {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        /* Header */
+        header {
+            position: sticky; top: 0; z-index: 100;
+            padding: 1.25rem 4rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-left { display: flex; align-items: center; gap: 0.75rem; }
+
+        .logo-svg { height: 28px; width: auto; }
+        .logo-svg path { fill: #e8e8e8; }
+
+        .logo-name {
+            font-size: 1rem; font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.78rem; color: var(--muted); text-decoration: none;
+            transition: all 0.3s; padding: 0.5rem 1rem;
+            border: 1px solid var(--border); border-radius: 100px;
+            background: var(--glass);
+        }
+        .back-btn:hover { color: var(--text); border-color: var(--border-hover); background: var(--glass-hover); }
+
+        /* Page layout */
+        .page {
+            position: relative; z-index: 10;
+            max-width: 900px; margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        /* Hero */
+        .terms-hero { text-align: center; margin-bottom: 3.5rem; }
+
+        .terms-eyebrow {
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 4px;
+            text-transform: uppercase; color: var(--dim); margin-bottom: 1rem;
+        }
+
+        .terms-title {
+            font-size: 2.8rem; font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #777 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 1.25rem;
+        }
+
+        .terms-sub {
+            font-size: 0.88rem; color: var(--muted); line-height: 1.7;
+            max-width: 580px; margin: 0 auto;
+        }
+
+        .terms-meta {
+            display: inline-flex; align-items: center; gap: 1.5rem;
+            margin-top: 1.75rem; padding: 0.75rem 1.5rem;
+            background: var(--glass); border: 1px solid var(--border);
+            border-radius: 100px; backdrop-filter: blur(10px);
+        }
+
+        .terms-meta-item { font-size: 0.68rem; color: var(--dim); display: flex; align-items: center; gap: 0.4rem; }
+        .terms-meta-item span { color: var(--muted); }
+
+        /* Accordion */
+        .accordion { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 3rem; }
+
+        .acc-item {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .acc-item:hover { border-color: var(--border-hover); }
+        .acc-item.open { border-color: rgba(255,255,255,0.12); background: var(--glass-hover); }
+
+        .acc-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            user-select: none;
+            gap: 1rem;
+        }
+
+        .acc-header-left { display: flex; align-items: center; gap: 1rem; }
+
+        .acc-num {
+            font-size: 0.6rem; font-weight: 700; letter-spacing: 2px;
+            color: var(--dim); min-width: 24px;
+        }
+
+        .acc-title {
+            font-size: 0.92rem; font-weight: 700; color: var(--text);
+            letter-spacing: -0.01em;
+        }
+
+        .acc-chevron {
+            width: 28px; height: 28px; border-radius: 8px;
+            background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        .acc-item.open .acc-chevron { background: rgba(255,255,255,0.08); transform: rotate(180deg); }
+
+        .acc-chevron svg path { stroke: var(--muted); transition: stroke 0.3s; }
+        .acc-item.open .acc-chevron svg path { stroke: var(--text); }
+
+        .acc-body {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        .acc-body-inner {
+            padding: 0 1.5rem 1.5rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.25rem;
+        }
+
+        .acc-body p {
+            font-size: 0.82rem; color: var(--muted); line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+
+        .acc-body p:last-child { margin-bottom: 0; }
+
+        .acc-body ul, .acc-body ol {
+            margin: 0.5rem 0 0.75rem 1.25rem;
+        }
+
+        .acc-body li {
+            font-size: 0.82rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.3rem;
+        }
+
+        .acc-body strong { color: rgba(255,255,255,0.7); font-weight: 600; }
+
+        /* Signature area */
+        .sign-area {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .sign-header { margin-bottom: 2rem; }
+
+        .sign-eyebrow {
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 4px;
+            text-transform: uppercase; color: var(--dim); margin-bottom: 0.6rem;
+        }
+
+        .sign-title {
+            font-size: 1.3rem; font-weight: 700; color: var(--text);
+            letter-spacing: -0.02em; margin-bottom: 0.5rem;
+        }
+
+        .sign-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+
+        .sign-checkbox-wrap {
+            display: flex; align-items: flex-start; gap: 0.85rem;
+            padding: 1.25rem; margin-bottom: 1.5rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border); border-radius: 14px;
+            cursor: pointer; transition: all 0.3s;
+        }
+
+        .sign-checkbox-wrap:hover { border-color: var(--border-hover); background: var(--glass-hover); }
+        .sign-checkbox-wrap.checked { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
+
+        .custom-checkbox {
+            width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0; margin-top: 1px;
+            border: 1.5px solid var(--dim);
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.25s ease;
+        }
+
+        .sign-checkbox-wrap.checked .custom-checkbox {
+            background: #e8e8e8; border-color: #e8e8e8;
+        }
+
+        .custom-checkbox svg { opacity: 0; transition: opacity 0.2s; }
+        .sign-checkbox-wrap.checked .custom-checkbox svg { opacity: 1; }
+
+        .sign-checkbox-label { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+        .sign-checkbox-wrap.checked .sign-checkbox-label { color: rgba(255,255,255,0.7); }
+
+        .sign-name-group { margin-bottom: 1.5rem; }
+
+        .sign-label {
+            display: block; font-size: 0.68rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            color: var(--dim); margin-bottom: 0.6rem;
+        }
+
+        .sign-input {
+            width: 100%; padding: 0.9rem 1.25rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border); border-radius: 12px;
+            font-family: inherit; font-size: 0.88rem;
+            color: var(--text); outline: none;
+            transition: all 0.3s;
+            caret-color: #e8e8e8;
+            user-select: text;
+            -webkit-user-select: text;
+        }
+
+        .sign-input::placeholder { color: var(--dim); }
+
+        .sign-input:focus {
+            border-color: rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.04);
+        }
+
+        .sign-input.error { border-color: rgba(255, 80, 80, 0.5); }
+
+        .sign-error {
+            font-size: 0.72rem; color: rgba(255,100,100,0.8);
+            margin-top: 0.4rem; display: none;
+        }
+
+        .sign-error.visible { display: block; }
+
+        .sign-btn {
+            width: 100%; padding: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            color: #0a0a0a; border: none; border-radius: 12px;
+            font-family: inherit; font-size: 0.88rem; font-weight: 700;
+            cursor: pointer; transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+            display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+            box-shadow: 0 8px 32px rgba(255,255,255,0.08);
+            position: relative; overflow: hidden;
+            letter-spacing: 0.3px;
+        }
+
+        .sign-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: left 0.5s;
+        }
+
+        .sign-btn:hover::before { left: 100%; }
+
+        .sign-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(255,255,255,0.18);
+        }
+
+        .sign-btn:disabled {
+            opacity: 0.35; cursor: not-allowed; transform: none;
+            box-shadow: none;
+        }
+
+        .sign-btn:disabled::before { display: none; }
+
+        /* Success state */
+        .sign-success {
+            display: none; text-align: center; padding: 1.5rem 0 0.5rem;
+        }
+
+        .sign-success.visible { display: block; }
+
+        .sign-success-icon {
+            width: 52px; height: 52px; border-radius: 50%;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .sign-success p { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; }
+        .sign-success strong { color: var(--text); display: block; font-size: 1rem; margin-bottom: 0.25rem; }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0; transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-up:nth-child(1) { animation-delay: 0.1s; }
+        .fade-up:nth-child(2) { animation-delay: 0.2s; }
+        .fade-up:nth-child(3) { animation-delay: 0.3s; }
+
+        @media (max-width: 768px) {
+            header { padding: 1rem 1.5rem; }
+            .page { padding: 2.5rem 1.25rem 4rem; }
+            .terms-title { font-size: 2rem; }
+            .sign-area { padding: 1.75rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-bg"></div>
+
+    <header>
+        <div class="header-left">
+            <svg class="logo-svg" viewBox="0 0 6696 4236" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4572.66 3396.02V3396.01H4569.5L4571.29 3396.02L4572.66 3396.02Z" fill="#e8e8e8"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4556.96 3396.01H4569.5C4565.32 3395.98 4561.14 3395.93 4556.96 3395.86L4556.96 3396.01Z" fill="#e8e8e8"/>
+                <path d="M4572.66 839.99C4741.03 839.331 4907.87 871.947 5063.61 935.97L5067.27 937.481C5222.12 1001.71 5362.84 1095.77 5481.4 1214.34C5600.89 1333.84 5695.49 1475.85 5759.74 1632.15C5823.98 1788.46 5856.59 1955.95 5855.67 2124.94C5854.75 2293.93 5820.33 2461.06 5754.4 2616.66C5688.46 2772.25 5592.32 2913.23 5471.54 3031.42C5350.76 3149.62 5207.74 3242.69 5050.75 3305.25C4898.63 3365.86 4736.32 3396.66 4572.66 3396.02L4571.29 3396.02L4569.5 3396.01H4556.96H4400.3H2244.66H2234.66V3395.51H1311.96C950.149 3395.51 724.02 3003.84 904.923 2690.51L1837.63 1075.01C1926.18 921.638 2079.74 843.342 2234.66 840.112V840.006H2244.66H3485.97H4572.66V839.99ZM4574.73 0.00203242L4572.66 0.00590155H2244.66C2243.51 0.00590107 2242.36 0.00738713 2241.21 0.0103597C1801.17 1.14658 1361.62 219.479 1110.17 655.006L177.461 2270.51L174.52 2275.62C-323.319 3146.39 303.025 4231.25 1306.05 4235.49L1311.96 4235.51H2244.66V4236.01L4572.66 4236C4673.95 4236.24 4774.92 4229.22 4874.81 4215.06C5041.29 4191.47 5204.76 4148.08 5361.69 4085.55C5621.85 3981.88 5858.87 3827.64 6059.04 3631.76C6259.2 3435.88 6418.52 3202.25 6527.8 2944.39C6637.07 2686.53 6694.11 2409.55 6695.63 2129.5C6697.15 1849.44 6643.11 1571.86 6536.65 1312.83C6430.18 1053.8 6273.4 818.451 6075.37 620.411C5877.35 422.371 5642.01 265.571 5382.99 159.084C5286.43 119.389 5187.3 86.979 5086.42 62.0155C5083.34 61.2539 5080.26 60.4992 5077.18 59.7514C4913.05 19.9179 4744.38 -0.232972 4574.73 0.00203242Z" fill="#e8e8e8"/>
+            </svg>
+            <span class="logo-name">Addex Creations</span>
+        </div>
+        <a href="index.html" class="back-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Voltar ao site
+        </a>
+    </header>
+
+    <div class="page">
+
+        <!-- Hero -->
+        <div class="terms-hero fade-up">
+            <p class="terms-eyebrow">Documento oficial</p>
+            <h1 class="terms-title">Termos e Condições</h1>
+            <p class="terms-sub">Conheça as regras, condições de contratação, prazos, revisões, pagamentos e direitos de uso aplicáveis aos serviços da Addex Creations.</p>
+            <div class="terms-meta">
+                <div class="terms-meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    <span>Vigência: 2026</span>
+                </div>
+                <div class="terms-meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    <span>12 cláusulas</span>
+                </div>
+                <div class="terms-meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                    <span>Addex Creations</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion -->
+        <div class="accordion fade-up">
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">01</span>
+                        <span class="acc-title">Objeto</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>Os presentes Termos e Condições regulam a prestação de serviços criativos e de design realizados pela <strong>Addex Creations</strong>.</p>
+                        <p>O escopo de cada projeto será definido com base nas informações fornecidas pelo cliente no briefing e nas condições apresentadas no orçamento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">02</span>
+                        <span class="acc-title">Processo de Atendimento e Contratação</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>A contratação dos serviços seguirá as seguintes etapas:</p>
+                        <ol>
+                            <li><strong>Briefing:</strong> o cliente deverá fornecer todas as informações necessárias para a correta compreensão do projeto, incluindo ideias, referências, textos, cores, objetivos e demais orientações relevantes.</li>
+                            <li><strong>Orçamento:</strong> após a análise do briefing, será apresentado ao cliente o valor final para execução do projeto.</li>
+                            <li><strong>Pagamento:</strong> uma vez aprovado o orçamento, o pagamento deverá ser realizado de forma integral e antecipada.</li>
+                            <li><strong>Início do Projeto:</strong> a execução do serviço somente terá início após a devida confirmação do pagamento.</li>
+                        </ol>
+                        <p>A ausência de informações essenciais no briefing poderá comprometer o andamento do projeto, os prazos de entrega e o resultado final.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">03</span>
+                        <span class="acc-title">Dias e Horários de Atendimento</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>O atendimento e a produção ocorrem de <strong>segunda-feira a sábado, das 12h00 às 19h00</strong>.</p>
+                        <p>Aos domingos, a Addex Creations realiza exclusivamente atendimentos relacionados a orçamentos.</p>
+                        <p>Eventuais respostas fora do horário comercial poderão ocorrer, sem que isso configure obrigação de atendimento contínuo ou imediato.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">04</span>
+                        <span class="acc-title">Prazos de Entrega</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>O prazo de entrega será informado após a análise do briefing e passará a contar somente a partir da confirmação do pagamento.</p>
+                        <p>O prazo poderá ser prorrogado nos casos em que houver demora por parte do cliente no envio de informações, aprovações, revisões ou feedbacks necessários ao desenvolvimento do projeto.</p>
+                        <p>Projetos com caráter de urgência poderão ser aceitos mediante disponibilidade e estarão sujeitos à cobrança de <strong>taxa adicional</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">05</span>
+                        <span class="acc-title">Revisões e Alterações</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>A quantidade de revisões incluídas em cada projeto será previamente informada no orçamento.</p>
+                        <p>Serão consideradas revisões apenas as alterações compatíveis com a proposta criativa originalmente aprovada.</p>
+                        <p>Alterações que impliquem modificação substancial ou descaracterização do conceito inicial poderão ser tratadas como <strong>novo projeto</strong> e, consequentemente, sujeitas à nova cobrança.</p>
+                        <p>Revisões adicionais além da quantidade previamente acordada estarão sujeitas à cobrança extra.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">06</span>
+                        <span class="acc-title">Pagamento</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>O pagamento pelos serviços contratados será realizado de forma <strong>integral e antecipada</strong>.</p>
+                        <p>A Addex Creations não iniciará qualquer projeto antes da confirmação do pagamento.</p>
+                        <p>A aprovação do orçamento e a realização do pagamento implicam concordância com o escopo, condições e valores previamente apresentados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">07</span>
+                        <span class="acc-title">Cancelamento e Reembolso</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>O cliente poderá solicitar o cancelamento do projeto antes do início efetivo da produção.</p>
+                        <p>Após o início da execução do serviço, <strong>não haverá reembolso</strong>, ressalvadas hipóteses excepcionais que poderão ser analisadas exclusivamente a critério da Addex Creations.</p>
+                        <p>Em casos específicos, eventual possibilidade de reembolso parcial ou composição será avaliada individualmente, sem que isso constitua obrigação ou precedente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">08</span>
+                        <span class="acc-title">Entrega dos Arquivos</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>Os materiais finais serão entregues em formato digital, tais como PNG, JPG, PDF ou outro previamente acordado entre as partes.</p>
+                        <p>Arquivos editáveis, abertos ou de produção (PSD, AI, SVG e similares) <strong>não estão incluídos</strong>, salvo contratação expressa em sentido contrário.</p>
+                        <p>Após a aprovação final e entrega do material, quaisquer alterações, ajustes ou novas versões poderão ser cobrados separadamente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">09</span>
+                        <span class="acc-title">Direitos de Uso e Propriedade Intelectual</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>Após a entrega final e a quitação do valor contratado, o cliente poderá utilizar a arte final para fins pessoais e comerciais, conforme a finalidade para a qual o projeto foi originalmente desenvolvido.</p>
+                        <p>É <strong>vedada</strong> a revenda, redistribuição, sublicenciamento, cessão ou edição do material para terceiros sem autorização prévia e expressa da Addex Creations.</p>
+                        <p>Salvo ajuste diverso entre as partes, a Addex Creations permanece autorizada a exibir o projeto em portfólio, redes sociais e apresentações comerciais.</p>
+                        <p>Caso o cliente deseje confidencialidade sobre o projeto, deverá comunicar formalmente essa condição antes da publicação ou divulgação.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">10</span>
+                        <span class="acc-title">Responsabilidades das Partes</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p><strong>Responsabilidades do Cliente:</strong></p>
+                        <ul>
+                            <li>Fornecer informações verdadeiras, completas e adequadas ao desenvolvimento do projeto;</li>
+                            <li>Encaminhar referências, textos, materiais e instruções dentro dos prazos necessários;</li>
+                            <li>Aprovar ou solicitar ajustes em tempo razoável, de forma clara e objetiva;</li>
+                            <li>Revisar atentamente textos, ortografia, dados e demais elementos antes da aprovação final.</li>
+                        </ul>
+                        <p><strong>Responsabilidades da Addex Creations:</strong></p>
+                        <ul>
+                            <li>Executar o projeto de acordo com o briefing aprovado e com as condições definidas no orçamento;</li>
+                            <li>Realizar a entrega dentro do prazo informado, ressalvadas hipóteses de força maior ou imprevistos devidamente comunicados;</li>
+                            <li>Informar o cliente sobre eventual necessidade de ajuste de prazo ou qualquer ocorrência que impacte a execução.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">11</span>
+                        <span class="acc-title">Disposições Gerais</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>A Addex Creations reserva-se o direito de recusar projetos que contrariem seus princípios, disponibilidade operacional ou critérios internos de atendimento.</p>
+                        <p>O não exercício imediato de qualquer direito previsto nestes termos não constituirá renúncia, novação ou alteração contratual.</p>
+                        <p>Estes termos poderão ser atualizados periodicamente, passando a vigorar a versão publicada no site na data da contratação.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <div class="acc-header-left">
+                        <span class="acc-num">12</span>
+                        <span class="acc-title">Aceite dos Termos</span>
+                    </div>
+                    <div class="acc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </div>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>Ao contratar qualquer serviço da Addex Creations, o cliente declara que <strong>leu, entendeu e concorda integralmente</strong> com todas as disposições destes Termos e Condições de Contratação.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Signature -->
+        <div class="sign-area fade-up">
+            <div class="sign-header">
+                <p class="sign-eyebrow">Declaração de aceite</p>
+                <h2 class="sign-title">Li e concordo com os Termos</h2>
+                <p class="sign-desc">Preencha seu nome completo, confirme a leitura e baixe o documento em PDF com o registro do seu aceite.</p>
+            </div>
+
+            <div id="signCheckbox" class="sign-checkbox-wrap" onclick="toggleCheck()">
+                <div class="custom-checkbox">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13l4 4L19 7" stroke="#0a0a0a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="sign-checkbox-label">Declaro que li e concordo com os Termos e Condições de Contratação da <strong>Addex Creations</strong>, incluindo todas as cláusulas referentes a prazos, pagamentos, revisões, cancelamento e direitos de uso.</span>
+            </div>
+
+            <div class="sign-name-group">
+                <label class="sign-label" for="signName">Nome completo</label>
+                <input type="text" id="signName" class="sign-input" placeholder="Digite seu nome completo">
+                <p class="sign-error" id="signError">Por favor, preencha seu nome completo para continuar.</p>
+            </div>
+
+            <button class="sign-btn" id="signBtn" onclick="generatePDF()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 15V3M12 15l-4-4M12 15l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Baixar Termos em PDF
+            </button>
+
+            <div class="sign-success" id="signSuccess">
+                <div class="sign-success-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13l4 4L19 7" stroke="#e8e8e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <strong id="signSuccessName"></strong>
+                <p>Seu PDF foi gerado com o registro de aceite. Guarde o documento para referência futura.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Accordion
+        function toggleAcc(header) {
+            const item = header.parentElement;
+            const body = item.querySelector('.acc-body');
+            const isOpen = item.classList.contains('open');
+
+            document.querySelectorAll('.acc-item.open').forEach(el => {
+                el.classList.remove('open');
+                el.querySelector('.acc-body').style.maxHeight = '0';
+            });
+
+            if (!isOpen) {
+                item.classList.add('open');
+                body.style.maxHeight = body.scrollHeight + 'px';
+            }
+        }
+
+        // Checkbox
+        let checked = false;
+        function toggleCheck() {
+            checked = !checked;
+            document.getElementById('signCheckbox').classList.toggle('checked', checked);
+        }
+
+        // PDF generation
+        function generatePDF() {
+            const name = document.getElementById('signName').value.trim();
+            const nameInput = document.getElementById('signName');
+            const errorEl = document.getElementById('signError');
+
+            // Validate
+            if (!checked) {
+                document.getElementById('signCheckbox').style.borderColor = 'rgba(255,80,80,0.5)';
+                setTimeout(() => document.getElementById('signCheckbox').style.borderColor = '', 2000);
+                return;
+            }
+
+            if (!name || name.length < 3) {
+                nameInput.classList.add('error');
+                errorEl.classList.add('visible');
+                nameInput.focus();
+                return;
+            }
+
+            nameInput.classList.remove('error');
+            errorEl.classList.remove('visible');
+
+            const btn = document.getElementById('signBtn');
+            btn.disabled = true;
+            btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="animation:spin 1s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Gerando PDF...`;
+
+            const style = document.createElement('style');
+            style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+            document.head.appendChild(style);
+
+            setTimeout(() => {
+                try {
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+
+                    const now = new Date();
+                    const dateStr = now.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+                    const timeStr = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+                    const W = 210, margin = 20, contentW = W - margin * 2;
+
+                    // Header bar
+                    doc.setFillColor(15, 15, 15);
+                    doc.rect(0, 0, W, 40, 'F');
+                    doc.setFontSize(18);
+                    doc.setTextColor(232, 232, 232);
+                    doc.setFont('helvetica', 'bold');
+                    doc.text('Addex Creations', margin, 18);
+                    doc.setFontSize(9);
+                    doc.setTextColor(120, 120, 120);
+                    doc.setFont('helvetica', 'normal');
+                    doc.text('Termos e Condições de Contratação', margin, 27);
+                    doc.text('Documento gerado com aceite registrado', margin, 34);
+
+                    let y = 54;
+
+                    // Title
+                    doc.setFontSize(20);
+                    doc.setTextColor(30, 30, 30);
+                    doc.setFont('helvetica', 'bold');
+                    doc.text('Termos e Condições', margin, y);
+                    y += 8;
+                    doc.setFontSize(10);
+                    doc.setTextColor(100, 100, 100);
+                    doc.setFont('helvetica', 'normal');
+                    doc.text('Conheça as regras, condições de contratação, prazos, revisões, pagamentos e direitos de uso', margin, y, { maxWidth: contentW });
+                    y += 14;
+
+                    // Divider
+                    doc.setDrawColor(220, 220, 220);
+                    doc.setLineWidth(0.3);
+                    doc.line(margin, y, W - margin, y);
+                    y += 10;
+
+                    const sections = [
+                        { num: '1.', title: 'Objeto', content: [
+                            'Os presentes Termos e Condições regulam a prestação de serviços criativos e de design realizados pela Addex Creations.',
+                            'O escopo de cada projeto será definido com base nas informações fornecidas pelo cliente no briefing e nas condições apresentadas no orçamento.'
+                        ]},
+                        { num: '2.', title: 'Processo de Atendimento e Contratação', content: [
+                            'A contratação segue as etapas: I. Briefing: o cliente fornece todas as informações necessárias. II. Orçamento: após análise do briefing, é apresentado o valor final. III. Pagamento: integral e antecipado após aprovação do orçamento. IV. Início do Projeto: somente após confirmação do pagamento.',
+                            'A ausência de informações essenciais no briefing poderá comprometer os prazos e o resultado final.'
+                        ]},
+                        { num: '3.', title: 'Dias e Horários de Atendimento', content: [
+                            'Atendimento e produção: segunda-feira a sábado, das 12h00 às 19h00.',
+                            'Aos domingos: exclusivamente atendimentos relacionados a orçamentos.',
+                            'Eventuais respostas fora do horário comercial poderão ocorrer, sem configurar obrigação de atendimento contínuo.'
+                        ]},
+                        { num: '4.', title: 'Prazos de Entrega', content: [
+                            'O prazo será informado após a análise do briefing, contando a partir da confirmação do pagamento.',
+                            'Poderá ser prorrogado em caso de demora do cliente no envio de informações, aprovações ou feedbacks.',
+                            'Projetos urgentes podem ser aceitos mediante disponibilidade, sujeitos a taxa adicional.'
+                        ]},
+                        { num: '5.', title: 'Revisões e Alterações', content: [
+                            'A quantidade de revisões incluídas será informada no orçamento.',
+                            'São consideradas revisões apenas alterações compatíveis com a proposta original aprovada.',
+                            'Modificações substanciais poderão ser tratadas como novo projeto com nova cobrança.',
+                            'Revisões adicionais além do acordado estão sujeitas a cobrança extra.'
+                        ]},
+                        { num: '6.', title: 'Pagamento', content: [
+                            'O pagamento será realizado de forma integral e antecipada.',
+                            'Nenhum projeto será iniciado antes da confirmação do pagamento.',
+                            'A aprovação e o pagamento implicam concordância com o escopo e valores apresentados.'
+                        ]},
+                        { num: '7.', title: 'Cancelamento e Reembolso', content: [
+                            'Cancelamento é possível antes do início efetivo da produção.',
+                            'Após o início da execução, não haverá reembolso, salvo hipóteses excepcionais a critério da Addex Creations.',
+                            'Eventual reembolso parcial será avaliado individualmente, sem constituir obrigação ou precedente.'
+                        ]},
+                        { num: '8.', title: 'Entrega dos Arquivos', content: [
+                            'Materiais finais entregues em formato digital: PNG, JPG, PDF ou outro previamente acordado.',
+                            'Arquivos editáveis (PSD, AI, SVG) não estão incluídos, salvo contratação expressa.',
+                            'Após aprovação final, alterações ou novas versões poderão ser cobradas separadamente.'
+                        ]},
+                        { num: '9.', title: 'Direitos de Uso e Propriedade Intelectual', content: [
+                            'Após entrega e quitação, o cliente pode utilizar a arte para fins pessoais e comerciais conforme o projeto original.',
+                            'É vedada a revenda, redistribuição, cessão ou edição para terceiros sem autorização prévia.',
+                            'A Addex Creations pode exibir o projeto em portfólio e redes sociais salvo acordo de confidencialidade.'
+                        ]},
+                        { num: '10.', title: 'Responsabilidades das Partes', content: [
+                            'Cliente: fornecer informações verdadeiras, encaminhar materiais nos prazos, aprovar ajustes objetivamente e revisar textos antes da aprovação final.',
+                            'Addex Creations: executar conforme briefing aprovado, entregar no prazo informado e comunicar qualquer ocorrência que impacte a execução.'
+                        ]},
+                        { num: '11.', title: 'Disposições Gerais', content: [
+                            'A Addex Creations pode recusar projetos contrários a seus princípios ou disponibilidade.',
+                            'O não exercício de direitos não constitui renúncia ou alteração contratual.',
+                            'Estes termos podem ser atualizados periodicamente.'
+                        ]},
+                        { num: '12.', title: 'Aceite', content: [
+                            'Ao contratar qualquer serviço da Addex Creations, o cliente declara que leu, entendeu e concorda integralmente com todos os presentes Termos e Condições.'
+                        ]}
+                    ];
+
+                    sections.forEach(sec => {
+                        const estimatedHeight = 12 + sec.content.length * 14;
+                        if (y + estimatedHeight > 270) { doc.addPage(); y = 20; }
+
+                        doc.setFontSize(11);
+                        doc.setTextColor(20, 20, 20);
+                        doc.setFont('helvetica', 'bold');
+                        doc.text(`${sec.num} ${sec.title}`, margin, y);
+                        y += 6;
+
+                        doc.setFont('helvetica', 'normal');
+                        doc.setFontSize(9);
+                        doc.setTextColor(80, 80, 80);
+
+                        sec.content.forEach(line => {
+                            const lines = doc.splitTextToSize(line, contentW - 4);
+                            if (y + lines.length * 5 > 275) { doc.addPage(); y = 20; }
+                            doc.text(lines, margin + 3, y);
+                            y += lines.length * 5 + 2;
+                        });
+
+                        y += 5;
+                    });
+
+                    // Signature block
+                    doc.addPage();
+                    const sy = 30;
+
+                    doc.setFillColor(245, 245, 245);
+                    doc.roundedRect(margin, sy, contentW, 80, 4, 4, 'F');
+                    doc.setDrawColor(200, 200, 200);
+                    doc.setLineWidth(0.3);
+                    doc.roundedRect(margin, sy, contentW, 80, 4, 4, 'S');
+
+                    doc.setFontSize(13);
+                    doc.setTextColor(20, 20, 20);
+                    doc.setFont('helvetica', 'bold');
+                    doc.text('Declaração de Aceite', margin + 8, sy + 14);
+
+                    doc.setFontSize(9);
+                    doc.setTextColor(80, 80, 80);
+                    doc.setFont('helvetica', 'normal');
+                    doc.text('Declaro que li, compreendi e aceito integralmente os Termos e Condições', margin + 8, sy + 24, { maxWidth: contentW - 16 });
+                    doc.text('de Contratação da Addex Creations.', margin + 8, sy + 30);
+
+                    doc.setFontSize(10);
+                    doc.setTextColor(20, 20, 20);
+                    doc.setFont('helvetica', 'bold');
+                    doc.text('Nome completo:', margin + 8, sy + 43);
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(name, margin + 50, sy + 43);
+
+                    doc.setFont('helvetica', 'bold');
+                    doc.text('Data e hora:', margin + 8, sy + 52);
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(`${dateStr} às ${timeStr}`, margin + 40, sy + 52);
+
+                    doc.setDrawColor(100, 100, 100);
+                    doc.setLineWidth(0.5);
+                    doc.line(margin + 8, sy + 68, margin + 100, sy + 68);
+                    doc.setFontSize(8);
+                    doc.setTextColor(120, 120, 120);
+                    doc.text('Assinatura digital (nome declarado)', margin + 8, sy + 74);
+
+                    // Footer
+                    doc.setFontSize(7.5);
+                    doc.setTextColor(160, 160, 160);
+                    doc.text('Addex Creations — Documento gerado eletronicamente com fins de registro de aceite.', margin, 285);
+                    doc.text(`${dateStr} ${timeStr}`, W - margin, 285, { align: 'right' });
+
+                    doc.save(`Addex_Termos_${name.replace(/\s+/g, '_')}.pdf`);
+
+                    // Success
+                    btn.style.display = 'none';
+                    const success = document.getElementById('signSuccess');
+                    document.getElementById('signSuccessName').textContent = `${name}, seu aceite foi registrado!`;
+                    success.classList.add('visible');
+
+                } catch(e) {
+                    console.error(e);
+                    btn.disabled = false;
+                    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 15V3M12 15l-4-4M12 15l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Baixar Termos em PDF`;
+                }
+            }, 600);
+        }
+
+        // Block right-click and text selection
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('copy', e => e.preventDefault());
+        document.addEventListener('cut', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            // Block Ctrl+C, Ctrl+A, Ctrl+X, Ctrl+U, Ctrl+S, F12, Ctrl+Shift+I, Ctrl+Shift+J
+            if (
+                (e.ctrlKey && ['c','a','x','u','s','p'].includes(e.key.toLowerCase())) ||
+                (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) ||
+                e.key === 'F12'
+            ) {
+                e.preventDefault();
+            }
+        });
+        document.getElementById('signName').addEventListener('input', function() {
+            this.classList.remove('error');
+            document.getElementById('signError').classList.remove('visible');
+        });
+    </script>
+</body>
+</html>
